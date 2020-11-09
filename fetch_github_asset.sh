@@ -25,9 +25,9 @@ API_URL="https://$TOKEN:@api.github.com/repos/$REPO"
 RELEASE_DATA=$(curl $API_URL/releases/${INPUT_VERSION})
 ASSET_ID=$(echo $RELEASE_DATA | jq -r ".assets | map(select(.name == \"${INPUT_FILE}\"))[0].id")
 TAG_VERSION=$(echo $RELEASE_DATA | jq -r ".tag_name" | sed -e "s/^v//" | sed -e "s/^v.//")
-@echo $RELEASE_DATA
-@echo $ASSET_ID
-@echo $TAG_VERSION
+echo $RELEASE_DATA
+echo $ASSET_ID
+echo $TAG_VERSION
 
 if [[ -z "$ASSET_ID" ]]; then
   echo "Could not find asset id"
