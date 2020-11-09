@@ -24,9 +24,12 @@ fi
 #HEADERS="-H \"Accept: application/vnd.github.v3+json\""
 AUTH_HEADER="-H \"Authorization: token $TOKEN\""
 API_URL="https://api.github.com/repos/$REPO"
-RELEASE_DATA=$(curl $AUTH_HEADER $API_URL/releases/${INPUT_VERSION})
+REST_REQUEST="$AUTH_HEADER $API_URL/releases/${INPUT_VERSION}"
+RELEASE_DATA=$(curl $REST_REQUEST)
 ASSET_ID=$(echo $RELEASE_DATA | jq -r ".assets | map(select(.name == \"${INPUT_FILE}\"))[0].id")
 TAG_VERSION=$(echo $RELEASE_DATA | jq -r ".tag_name" | sed -e "s/^v//" | sed -e "s/^v.//")
+echo "REST REQUEST"
+echo "$REST_REQUEST"
 echo "API_URL"
 echo "$API_URL"
 echo "RELEASE DATA:"
