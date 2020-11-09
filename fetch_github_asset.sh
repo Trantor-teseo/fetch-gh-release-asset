@@ -21,9 +21,10 @@ if ! [[ -z ${INPUT_TOKEN} ]]; then
   TOKEN=$INPUT_TOKEN
 fi
 
-HEADERS="-H \"Accept: application/vnd.github.v3+json\""
-API_URL="https://$TOKEN:@api.github.com/repos/$REPO"
-RELEASE_DATA=$(curl $HEADERS $API_URL/releases/${INPUT_VERSION})
+#HEADERS="-H \"Accept: application/vnd.github.v3+json\""
+AUTH_HEADER="-H \"Authorization: token $TOKEN\""
+API_URL="https://api.github.com/repos/$REPO"
+RELEASE_DATA=$(curl $AUTH_HEADER $API_URL/releases/${INPUT_VERSION})
 ASSET_ID=$(echo $RELEASE_DATA | jq -r ".assets | map(select(.name == \"${INPUT_FILE}\"))[0].id")
 TAG_VERSION=$(echo $RELEASE_DATA | jq -r ".tag_name" | sed -e "s/^v//" | sed -e "s/^v.//")
 echo "API_URL"
