@@ -22,7 +22,7 @@ if ! [[ -z ${INPUT_TOKEN} ]]; then
 fi
 
 #HEADERS="-H \"Accept: application/vnd.github.v3+json\""
-AUTH_HEADER="-H \"Authorization: token $TOKEN\""
+AUTH_HEADER="-i -H \"Authorization: token $TOKEN\""
 API_URL="https://api.github.com/repos/$REPO"
 REST_REQUEST="$AUTH_HEADER $API_URL/releases/${INPUT_VERSION}"
 RELEASE_DATA=$(curl $REST_REQUEST)
