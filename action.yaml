@@ -12,11 +12,10 @@ inputs:
     default: 'latest'
   file:
     description: 'name of the file in the release to download'
-    required: true
+    required: false
   token:
     description: 'optional Personal Access Token to access external repository'
     required: false
-    default: ''
 
 runs:
   using: 'docker'

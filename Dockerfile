@@ -5,8 +5,10 @@ RUN	apk add --no-cache \
   ca-certificates \
   curl \
   wget \
-  jq
+  jq \
+  python3 \
+  py3-pip
 
-COPY fetch_github_asset.sh /fetch_github_asset.sh
+COPY get_release.py /get_release.py
 
-ENTRYPOINT ["/fetch_github_asset.sh"]
+ENTRYPOINT ["python3 get_release.py"]
