@@ -1,23 +1,25 @@
 import requests
 import os
 
-if 'INPUT_FILE' not in os.environ:
-    print("Missing file input in the action")
-    exit(1)
-else:
-    INPUT_FILE = os.environ['INPUT_FILE']
+#if 'INPUT_FILE' not in os.environ:
+#    print("Missing file input in the action")
+#    exit(1)
+#else:
+#    INPUT_FILE = os.environ['INPUT_FILE']
 
-if 'GITHUB_REPOSITORY' not in os.environ:
-    print("Missing GitHub repository name in the action")
-    exit(1)
-else:
-    GITHUB_REPOSITORY = os.environ['GITHUB_REPOSITORY']
+#if 'GITHUB_REPOSITORY' not in os.environ:
+#    print("Missing GitHub repository name in the action")
+#    exit(1)
+#else:
+#    GITHUB_REPOSITORY = os.environ['GITHUB_REPOSITORY']
 
-if 'INPUT_TOKEN' not in os.environ:
-    print("Missing input token in the action")
-    exit(1)
-else:
-    TOKEN = os.environ['INPUT_TOKEN']
+#if 'INPUT_TOKEN' not in os.environ:
+#    print("Missing input token in the action")
+#    exit(1)
+#else:
+TOKEN = os.environ['INPUT_TOKEN']
+print(f"Input TOKEN: {TOKEN}")
+
 
 headers={
     'Authorization': f"token {TOKEN}"
