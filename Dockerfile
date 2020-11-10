@@ -11,4 +11,4 @@ RUN	apk add --no-cache \
 
 COPY get_release.py /get_release.py
 
-ENTRYPOINT ["python3 get_release.py"]
+ENTRYPOINT ["python3 /get_release.py"]
