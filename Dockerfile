@@ -8,7 +8,10 @@ RUN	apk add --no-cache \
   jq \
   python3 \
   py3-pip
+RUN pip3 install requests
 
 COPY get_release.py /get_release.py
 
-ENTRYPOINT ["python3 /get_release.py"]
+#ENTRYPOINT ["python /get_release.py"]
+CMD ["/get_release.py"]
+ENTRYPOINT ["python3"]
