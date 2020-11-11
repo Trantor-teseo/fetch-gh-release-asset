@@ -23,12 +23,12 @@ headers={
     'Authorization': f"token {TOKEN}"
 }
 
-FETCH_URL = f'https://api.github.com/repos/{GITHUB_REPOSITORY}/releases/latest'
+FETCH_URL = f'https://api.github.com/repos/{INPUT_REPO}/releases/latest'
 
 print("Passed parameters:")
 print(f"INPUT_FILE: {INPUT_FILE}")
 print(f"INPUT_TOKEN: {TOKEN}")
-print(f"GITHUB_REPOSITORY: {GITHUB_REPOSITORY}")
+print(f"GITHUB_REPOSITORY: {INPUT_REPO}")
 print(f"FETCH_URL: {FETCH_URL}")
 
 r = requests.get(FETCH_URL, headers=headers)
