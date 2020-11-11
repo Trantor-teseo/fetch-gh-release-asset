@@ -8,7 +8,7 @@ Original action is now converted to Python script.
 
 ### `repo`
 
-The `org/repo`. Defaults to the current repo.
+**Required** The `org/repo`. Defaults to the current repo.
 
 ### `version`
 
@@ -19,7 +19,7 @@ The release version to fetch from. Default `"latest"`. If not `"latest"`, this h
 **Required** The name of the file in the release.
 
 ### `token`
-Optional Personal Access Token to access repository. You need to either specify this or set the GITHUB_TOKEN environment variable yourself.
+**Required** Personal Access Token to access repository. You need to either specify this or set the GITHUB_TOKEN environment variable yourself.
 
 ## Example usage
 
