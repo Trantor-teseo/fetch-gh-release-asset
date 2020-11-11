@@ -7,7 +7,7 @@ if 'INPUT_FILE' not in os.environ:
 else:
     INPUT_FILE = os.environ['INPUT_FILE']
 
-if 'GITHUB_REPOSITORY' not in os.environ:
+if 'INPUT_REPO' not in os.environ:
     print("Missing GitHub repository name in the action")
     exit(1)
 else:

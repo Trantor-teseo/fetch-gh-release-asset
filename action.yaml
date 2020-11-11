@@ -4,18 +4,17 @@ description: 'Downloads an asset from a Github release'
 inputs:
   repo:
     description: 'org/repo to download from'
-    required: false
-    default: ''
+    required: true
   version:
     description: 'version of the release to download from'
     required: false
     default: 'latest'
   file:
     description: 'name of the file in the release to download'
-    required: false
+    required: true
   token:
     description: 'optional Personal Access Token to access external repository'
-    required: false
+    required: true
 
 runs:
   using: 'docker'
