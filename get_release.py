@@ -11,7 +11,7 @@ if 'INPUT_REPO' not in os.environ:
     print("Missing GitHub repository name in the action")
     exit(1)
 else:
-    GITHUB_REPOSITORY = os.environ['GITHUB_REPOSITORY']
+    INPUT_REPO = os.environ['INPUT_REPO']
 
 if 'INPUT_TOKEN' not in os.environ:
     print("Missing input token in the action")
