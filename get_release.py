@@ -30,6 +30,7 @@ if 'assets' in r.json():
     assets = r.json()['assets']
     print(f"Assets len: {len(assets)}")
     for elems in assets:
+        print(f"Checking elem: {elems['name']}")
         if elems['name'] == INPUT_FILE:
             filename = elems['name']
             url = elems['url']
