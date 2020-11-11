@@ -2,6 +2,8 @@
 
 This action downloads an asset from a Github release. Private repos are supported.
 
+Original action is now converted to Python script.
+
 ## Inputs
 
 ### `repo`
@@ -18,12 +20,6 @@ The release version to fetch from. Default `"latest"`. If not `"latest"`, this h
 
 ### `token`
 Optional Personal Access Token to access repository. You need to either specify this or set the GITHUB_TOKEN environment variable yourself.
-
-## Outputs
-
-### `version`
-
-The version number of the release tag. Can be used to deploy for example to itch.io
 
 ## Example usage
 
