@@ -23,7 +23,15 @@ headers={
     'Authorization': f"token {TOKEN}"
 }
 
-r = requests.get(f'https://api.github.com/repos/{GITHUB_REPOSITORY}/releases/latest', headers=headers)
+FETCH_URL = f'https://api.github.com/repos/{GITHUB_REPOSITORY}/releases/latest'
+
+print("Passed parameters:")
+print(f"INPUT_FILE: {INPUT_FILE}")
+print(f"INPUT_TOKEN: {TOKEN}")
+print(f"GITHUB_REPOSITORY: {GITHUB_REPOSITORY}")
+print(f"FETCH_URL: {FETCH_URL}")
+
+r = requests.get(FETCH_URL, headers=headers)
 url = None
 filename = None
 if 'assets' in r.json():
